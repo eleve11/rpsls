@@ -3,23 +3,24 @@ import java.util.Random;
 
 public class rpsls{
 
-	public static int userScore=0;
-	public static int computerScore=0;
-	public static Scanner userInput = new Scanner(System.in);
-	public static String userChoice;
-	public static String computerChoice;
-	public static int round=1;
+	public int userScore=0;
+	public int computerScore=0;
+	public Scanner userInput = new Scanner(System.in);
+	public String userChoice;
+	public String computerChoice;
+	public int round=1;
 
 
 	public static void main(String[] args){
+		rpsls a = new rpsls(); 
 		//print welcome message
 		System.out.println("Welcome to RPSLS!");		
 		//Start a new game 
-		game();
+		a.game();
 	}
 
 	//play gamephases
-	public static void game(){
+	public void game(){
 		System.out.println("Round "+round);
 		promptUser();
 		pcChoice();
@@ -33,7 +34,7 @@ public class rpsls{
 	}
 
 	//prompt User
-	public static void promptUser(){
+	public void promptUser(){
 		System.out.println("Do you choose Rock(r), Paper(p), Scissors(s), Lizard(l) or Spock(sp)? ");		
 		userChoice = userInput.next();
 		userChoice = userChoice.toUpperCase();
@@ -60,7 +61,7 @@ public class rpsls{
 	}
 
 	//computer makes a random choice
-	public static void pcChoice(){
+	public void pcChoice(){
 		Random rand = new Random();
 		int  computerRand = rand.nextInt(5);
 		
@@ -84,7 +85,7 @@ public class rpsls{
 	}
 
 	//define retry method
-	public static void retry(){
+	public void retry(){
 		System.out.println("");
 		System.out.println("Do you want to play again? ");	
 		String answer = userInput.next();
@@ -107,7 +108,7 @@ public class rpsls{
 	} 
 
 	//define comparing method
-	public static void compare(String choice1, String choice2){
+	public void compare(String choice1, String choice2){
 	    if(choice1.equals(choice2)){
 	    	System.out.println("The result is a tie!");
 	    }
@@ -202,7 +203,7 @@ public class rpsls{
 	            	computerScore++;
 	            	break;
 	            case "PAPER":
-	            	System.out.println( "Paper disproves Spock!");
+	            	System.out.println( "Paper diproves Spock!");
 	            	computerScore++;
 	            	break;
 	    	}
